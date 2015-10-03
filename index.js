@@ -8,6 +8,10 @@ var base64Img = require('base64-img');
 var MESSAGE_SCHEMA = {
   type: 'object',
   properties: {
+    "image": {
+      "type": "string",
+      "title": "Base64 Image"
+    }
   }
 };
 
@@ -29,7 +33,7 @@ util.inherits(Plugin, EventEmitter);
 Plugin.prototype.onMessage = function(message){
   var self = this;
   var payload = message.payload;
-  base64Img.img(payload.pictures, 'dest', '1', function(err, filepath){
+  base64Img.img(payload.image, 'dest', '1', function(err, filepath){
     var file = {
       "name": "1.jpg",
       "path": "dest/"
