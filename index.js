@@ -6,8 +6,8 @@ var imageToTextDecoder = require('image-to-text');
 var base64Img = require('base64-img');
 
 var MESSAGE_SCHEMA = {
-  type: 'object',
-  properties: {
+  "type": 'object',
+  "properties": {
     "image": {
       "type": "string",
       "title": "Base64 Image"
@@ -16,8 +16,11 @@ var MESSAGE_SCHEMA = {
 };
 
 var OPTIONS_SCHEMA = {
-  type: 'object',
-  properties: {
+  "type": 'object',
+  "properties": {
+    "blank": {
+      "type": "string"
+    }
   }
 };
 
