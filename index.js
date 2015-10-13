@@ -18,7 +18,7 @@ var MESSAGE_SCHEMA = {
 var OPTIONS_SCHEMA = {
   "type": 'object',
   "properties": {
-    "blank": {
+    "api_key": {
       "type": "string"
     }
   }
@@ -36,7 +36,7 @@ util.inherits(Plugin, EventEmitter);
 Plugin.prototype.onMessage = function(message){
   var self = this;
   var payload = message.payload;
-  base64Img.img(payload.image, 'dest', '1', function(err, filepath){
+base64Img.img(payload.image, 'dest', '1', function(err, filepath){
     var file = {
       "name": "1.jpg",
       "path": "dest/"
@@ -56,6 +56,8 @@ Plugin.prototype.onConfig = function(device){
 Plugin.prototype.setOptions = function(options){
   var self = this;
   self.options = options;
+
+  imageToTextDecoder.setAuth(options.api_key);
 };
 
 module.exports = {

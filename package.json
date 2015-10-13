@@ -1,7 +1,7 @@
 {
   "name": "meshblu-img-2-text",
   "repository": "octoblu/meshblu-img-2-text",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "connector.js",
   "scripts": {
     "preinstall": "node -e \"try{require('./skip-install.js')}catch(e){}\"",
@@ -11,7 +11,7 @@
   "dependencies": {
     "base64-img": "^1.0.3",
     "debug": "^2.2.0",
-    "image-to-text": "^1.0.5",
+    "image-to-text": "git://github.com/virgilvox/image-to-text.git",
     "lodash": "^3.10.1",
     "meshblu": "^1.30.1",
     "meshblu-config": "^3.1.1"
